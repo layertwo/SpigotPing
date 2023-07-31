@@ -1,19 +1,18 @@
 package com.xdefcon.spigotping.commands;
 
-import com.xdefcon.spigotping.SpigotPing;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class PingReloadCommand implements CommandExecutor {
-    private SpigotPing plugin;
+    private JavaPlugin plugin;
 
-    public PingReloadCommand(SpigotPing plugin) {
+    public PingReloadCommand(JavaPlugin plugin) {
         this.plugin = plugin;
     }
-
     @Override
     public boolean onCommand(CommandSender sender, Command c, String label, String[] args) {
         if (!sender.hasPermission("spigotping.reload")) {
@@ -21,7 +20,7 @@ public class PingReloadCommand implements CommandExecutor {
             return true;
         }
 
-        plugin.reload();
+        plugin.reloadConfig();
         if (sender instanceof Player) {
             sender.sendMessage(ChatColor.GREEN + "Plugin reloaded.");
         }

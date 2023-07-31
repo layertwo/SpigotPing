@@ -15,7 +15,7 @@ ping-command:
 # Section related to the per command permission system.
 permission-system:
   # Set this to true if you want to enable the permission system.
-  enabled: false
+  enabled: true
   # Customize the message sent to the players if they do not have required permission.
   no-perm-message: "&cYou do not have permissions to execute this command."
 
